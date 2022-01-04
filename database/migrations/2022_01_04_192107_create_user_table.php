@@ -16,6 +16,7 @@ class CreateUserTable extends Migration
         Schema::create('user', function (Blueprint $table) {
             $table->id();
             $table->string('user_name');
+            $table->foreignId('countries_id')->nullable()->constrained('countries');
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCountryTable extends Migration
+class CreateCompaniesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateCountryTable extends Migration
      */
     public function up()
     {
-        Schema::create('country', function (Blueprint $table) {
+        Schema::create('company', function (Blueprint $table) {
             $table->id();
-            $table->string('country_name');
+            $table->string('company_name');
+            $table->foreignId('countries_id')->nullable()->constrained('tags');
+            $table->timestamp('date_at');
         });
     }
 
@@ -26,6 +28,6 @@ class CreateCountryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('country');
+        Schema::dropIfExists('company');
     }
 }
