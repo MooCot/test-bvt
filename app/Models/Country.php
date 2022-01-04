@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Country extends Model
 {
     use HasFactory;
 
@@ -40,5 +40,9 @@ class User extends Model
     {
         return $this->belongsTo(Company::class);
     }
-    
+
+    public function users()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
