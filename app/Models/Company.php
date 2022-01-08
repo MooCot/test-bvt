@@ -35,9 +35,4 @@ class Company extends Model
     protected $casts = [
 
     ];
-
-    public function country()
-    {
-        return $this->hasOne(Country::class);
-    }
 }

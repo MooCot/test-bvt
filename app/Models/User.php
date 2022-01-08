@@ -35,10 +35,5 @@ class User extends Model
     protected $casts = [
 
     ];
-
-    public function company()
-    {
-        return $this->belongsTo(Company::class);
-    }
     
 }

@@ -36,13 +36,4 @@ class Country extends Model
 
     ];
 
-    public function company()
-    {
-        return $this->belongsTo(Company::class);
-    }
-
-    public function users()
-    {
-        return $this->hasMany(Comment::class);
-    }
 }

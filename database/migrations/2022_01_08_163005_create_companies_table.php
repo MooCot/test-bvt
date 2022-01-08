@@ -13,11 +13,10 @@ class CreateCompaniesTable extends Migration
      */
     public function up()
     {
-        Schema::create('company', function (Blueprint $table) {
+        Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->string('company_name');
-            $table->foreignId('countries_id')->nullable()->constrained('tags');
-            $table->timestamp('date_at');
+            $table->foreignId('county_id')->nullable()->constrained('countries');
         });
     }
 
@@ -28,6 +27,6 @@ class CreateCompaniesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('company');
+        Schema::dropIfExists('companies');
     }
 }
