@@ -11,6 +11,6 @@ class UserController extends Controller
 {
     public function getUsersByCountry(Request $request)
     {
-        return User::get()->company()->where('company', 'GR');
+        return User::company()->get();
     }
 }

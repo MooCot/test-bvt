@@ -15,24 +15,33 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // DB::table('countries')->insert([
-        //     'country_name' => 'GR',
-        // ]);
+        DB::table('countries')->insert([
+            'country_name' => 'GR',
+        ]);
 
-        // DB::table('companies')->insert([
-        //     'company_name' => 'bwt',
-        //     'countries_id' => 1,
-        //     'date_at' => now()
-        // ]);
+        DB::table('companies')->insert([
+            'company_name' => 'bwt',
+            'country_id' => 1,
+        ]);
 
-        // DB::table('users')->insert([
-        //     'user_name' => 'user1',
-        //     'companies_id' => 1,
-        // ]);
+        DB::table('users')->insert([
+            'user_name' => 'user1',
+        ]);
 
-        // DB::table('users')->insert([
-        //     'user_name' => 'user2',
-        //     'companies_id' => 2,
-        // ]);
+        DB::table('users')->insert([
+            'user_name' => 'user2',
+        ]);
+
+        DB::table('country_users')->insert([
+            'company_id' => 1,
+            'user_id' => 1,
+            'date_at' => now(),
+        ]);
+
+        DB::table('country_users')->insert([
+            'company_id' => 1,
+            'user_id' => 2,
+            'date_at' => now(),
+        ]);
     }
 }
