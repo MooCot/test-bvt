@@ -24,7 +24,8 @@ class User extends Model
      * @var array<int, string>
      */
     protected $hidden = [
-
+        'id',
+        'pivot'
     ];
 
     /**
@@ -33,9 +34,9 @@ class User extends Model
      * @var array<string, string>
      */
     protected $casts = [
-
+        'date_at' => 'date:d.m.Y',
     ];
-
+    
     public function companies()
     {
         return $this->belongsToMany(Company::class, 'country_users');

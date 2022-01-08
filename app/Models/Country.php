@@ -33,7 +33,7 @@ class Country extends Model
      * @var array<string, string>
      */
     protected $casts = [
-
+        
     ];
 
     public function companies()

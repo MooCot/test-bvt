@@ -24,7 +24,9 @@ class Company extends Model
      * @var array<int, string>
      */
     protected $hidden = [
-
+        'id',
+        'country_id',
+        'pivot'
     ];
 
     /**
@@ -33,7 +35,7 @@ class Company extends Model
      * @var array<string, string>
      */
     protected $casts = [
-
+        'date_at' => 'date:d.m.Y',
     ];
 
     public function users()
