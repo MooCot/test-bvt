@@ -36,6 +36,12 @@ class Country extends Model
         
     ];
 
+    public static function findCountryByName(string $country_name) 
+    {
+        $country = Country::select('id')->where('country_name', $country_name)->first();
+        return $country;
+    }
+
     public function companies()
     {
         return $this->hasMany(Company::class);
