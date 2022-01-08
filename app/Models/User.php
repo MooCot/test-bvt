@@ -35,5 +35,10 @@ class User extends Model
     protected $casts = [
 
     ];
+
+    public function companies()
+    {
+        return $this->belongsToMany(Company::class, 'country_users');
+    }
     
 }
